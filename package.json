@@ -1,0 +1,28 @@
+{
+  "name": "just-scrap-it-now",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IZIDIOZZ/just-scrap-it-now.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IZIDIOZZ/just-scrap-it-now/issues"
+  },
+  "homepage": "https://github.com/IZIDIOZZ/just-scrap-it-now#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "puppeteer": "^13.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
