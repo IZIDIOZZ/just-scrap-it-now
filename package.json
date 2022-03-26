@@ -20,9 +20,13 @@
   "homepage": "https://github.com/IZIDIOZZ/just-scrap-it-now#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "puppeteer": "^13.5.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "puppeteer": "^13.5.1",
+    "sequelize": "^6.17.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
   }
 }
