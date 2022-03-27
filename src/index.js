@@ -7,10 +7,11 @@ import cors from 'cors';
 const app  = express();
 
 startDBConnection();
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/scrap', scrapRoute);
 
 app.get('/', (req,res)=>{res.send('Scraper Working Fine');})
 
-app.listen(process.env.APP_PORT, ()=>console.log(`server running on port: http://localhost:${process.env.APP_PORT}`));
+app.listen(process.env.PORT || 3000, ()=>console.log(`server running on port: ${process.env.PORT}`));
