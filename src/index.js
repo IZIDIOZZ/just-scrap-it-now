@@ -10,7 +10,7 @@ startDBConnection();
 
 const PORT = 5000;
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 app.use('/scrap', scrapRoute);
 

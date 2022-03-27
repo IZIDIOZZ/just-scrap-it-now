@@ -20,6 +20,7 @@
   "homepage": "https://github.com/IZIDIOZZ/just-scrap-it-now#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
