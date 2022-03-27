@@ -7,11 +7,8 @@ import cors from 'cors';
 const app  = express();
 
 startDBConnection();
-
-const PORT = 5000;
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/scrap', scrapRoute);
 
-app.listen(PORT, ()=>console.log(`server running on port: http://localhost:${PORT}`));
+app.listen(process.env.APP_PORT, ()=>console.log(`server running on port: http://localhost:${process.env.APP_PORT}`));
