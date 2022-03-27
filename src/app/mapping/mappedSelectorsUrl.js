@@ -1,6 +1,5 @@
-const END_OF_HTTPS = 8;
 
-export const mappedSelectorForUrl = {
+const mappedSelectorForUrl = {
     'www.amazon.com.br': {
         title: {
             selector: '#productTitle',
@@ -9,11 +8,11 @@ export const mappedSelectorForUrl = {
         image: {
             selector: '#imgTagWrapperId #landingImage',
             attributeType: 'src'
-         },
+        },
         price: {
             selector: '.a-price .a-offscreen',
             attributeType: 'text'
-         },
+        },
         description: {
             selector: '#productDescription > p',
             attributeType: 'text'
@@ -31,11 +30,11 @@ export const mappedSelectorForUrl = {
         image: {
             selector: '.main-image__Container-sc-1i1hq2n-1 .src__LazyImage-sc-xr9q25-0',
             attributeType: 'src'
-         },
+        },
         price: {
             selector: '.priceSales',
             attributeType: 'text'
-         },
+        },
         description: {
             selector: '.src__SpecsCell-sc-70o4ee-5',
             attributeType: 'text'
@@ -53,11 +52,11 @@ export const mappedSelectorForUrl = {
         image: {
             selector: '.imgGaleryResponsive',
             attributeType: 'src'
-         },
+        },
         price: {
             selector: '.price-destaque',
             attributeType: 'text'
-         },
+        },
         description: {
             selector: '#descricao',
             attributeType: 'text'
@@ -69,12 +68,4 @@ export const mappedSelectorForUrl = {
     }
 }
 
-const getSelectorsFromMappedUrl = (url) => {
-   return mappedSelectorForUrl[getSplitedUrl(url)] || {} ;
-}
-
-const getSplitedUrl = (url) =>{
-    return url.slice(END_OF_HTTPS, url.length - 1).split('/')[0]
-}
-
-export default getSelectorsFromMappedUrl;
+export default mappedSelectorForUrl;

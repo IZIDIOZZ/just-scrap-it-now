@@ -17,4 +17,6 @@ class Database{
     }
 }
 
-export default Database;
+const startDBConnection = () => new Database();
+
+export default startDBConnection;

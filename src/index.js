@@ -1,13 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import scrapRoute from './routes/scrap.js';
-import Database from './app/database/index.js';
+import scrapRoute from './app/routes.js';
+import startDBConnection from './app/database/index.js';
 
 const app  = express();
 
-const PORT = 5000;
+startDBConnection();
 
-new Database();
+const PORT = 5000;
 
 app.use(bodyParser.json());
 

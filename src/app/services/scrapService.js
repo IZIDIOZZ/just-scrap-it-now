@@ -1,5 +1,7 @@
 import puppeteer from "puppeteer";
-import getSelectorsFromMappedUrl, { mappedSelectorForUrl } from "../utils/mapped-url.js";
+import { getSelectorsFromMappedUrl, removeQueryString } from "../utils/mapped-url.js";
+import mappedSelectorForUrl from "../mapping/mappedSelectorsUrl.js"
+import productRepository from "../repository/productRepository.js";
 
 export const getProductInformation = async (url) => {
     const browser = await puppeteer.launch();
@@ -16,14 +18,21 @@ export const getProductInformation = async (url) => {
             validUrls: getListOfValidUrls()
         };
     }
-    
+
+    const databaseProduct = await productRepository.select(removeQueryString(url));
+
+    if (databaseProduct != null) return databaseProduct;
+
     await page.goto(url, { waitUntil: 'domcontentloaded' })
-    
+
     for (var key in selectors) {
         if (selectors.hasOwnProperty(key)) {
             result[key] = await getPropertyValue(selectors, key, page);
         }
     }
+
+    await productRepository.insert(result);
+
     await page.close();
     await browser.close();
     return result;
@@ -40,7 +49,7 @@ const getPropertyValue = async (selectors, key, page) => {
     const attributeTypeName = selectors[key].attributeType
 
     if (isUrlProperty(attributeTypeName)) {
-        return await page.url();
+        return removeQueryString(await page.url());
     }
 
     try {
@@ -51,7 +60,9 @@ const getPropertyValue = async (selectors, key, page) => {
                 src: el.getAttribute('src')
             }
             return attributeTypes[attributeTypeName];
+
         }, attributeTypeName)
+        
     } catch (error) {
         return 'no value found'
     }

@@ -9,7 +9,7 @@ class Product extends Model{
                 image: DataTypes.TEXT,
                 price: DataTypes.STRING,
                 description: DataTypes.TEXT,
-                url: DataTypes.STRING(500)
+                url: DataTypes.STRING(500),
             },{
                 sequelize
             }

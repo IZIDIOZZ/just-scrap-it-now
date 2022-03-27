@@ -1,4 +1,4 @@
-import { getProductInformation } from "../../services/scrap-service.js";
+import { getProductInformation, } from "../services/scrapService.js";
 import Product from "../models/Product.js";
 
 export default {
