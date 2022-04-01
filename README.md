@@ -14,10 +14,8 @@ For now, the api only accepts a select list of sites that can have their product
 | `www.saraiva.com.br` | 
 
 So when testing, please use only one of those sites to get the products.
-## Testing the API Without Downloading The Source Code
-The api itself is current running in Heroku [https://just-scrap-it.herokuapp.com](https://just-scrap-it.herokuapp.com) in case you don't want test the project locally.
-## Testing The API Locally
 
+## Testing The API Locally
 
 After download the project in your machine, run:
 
